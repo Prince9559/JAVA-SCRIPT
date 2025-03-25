@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS using Javascript</title>
+    <style>
+        .active {
+            border-style: ridge;
+            border-color: green;
+            border-width: 3px;
+        }
+        .inactive {
+            border-style: ridge;
+            border-color: red;
+            border-width: 3px;
+        }
+        .add{
+           background-color: aqua;
+        }
+
+        .remove{
+            background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="dv">View the output</div>
+    <br><button class="active">Active</button>
+    <button class="inactive">Inactive</button><br><br>
+
+    <input type="text" id="txtcolor"><br><br>
+    <button onclick="setClass()">Set Class</button>
+    <button onclick="Addclass()">Add</button> 
+    <button onclick="Removeclass()">Remove</button>
+
+    <script>
+/****************************** Set Class ****************************************/
+        const txtclassname = document.getElementById("txtcolor");
+        const dvoutput = document.getElementById("dv");
+
+        function setClass() 
+        {
+            const newclass = txtclassname.value;
+            dvoutput.classList.add(newclass);
+        }
+/****************************** Add Class ****************************************/
+        const txtclass=document.getElementById("txtcolor");
+        const a=document.getElementById("dv");
+
+        function Addclass()
+        {
+            const newclass = txtclass.value;
+            a.classList.add(newclass);
+        }
+/****************************** Remove Class ************************************/
+        const txtclasses = document.getElementById("txtcolor");
+        const r = document.getElementById("dv");
+        
+        function Removeclass()
+        {
+        const newclass =txtclasses.value;
+        r.classList.add(newclass);
+        }
+
+    </script>
+</body>
+</html>

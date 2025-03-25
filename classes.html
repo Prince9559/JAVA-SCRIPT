@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abc {
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="t">
+    <br>
+    <input type="button" onclick="add()" value="Add">
+    <script>
+        const t = document.getElementById("t");
+        function add() {
+            console.log(t);
+            t.classList.add("abc");
+        }
+
+    </script>
+</body>
+
+</html>

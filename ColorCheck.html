@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Show()
+        {     
+       var boxes=document.getElementsByTagName("input");
+       n=boxes.length;
+
+       for(let i=0;i<=n-1;i++)
+       {
+        let x=Number(boxes[i].value);
+
+        if(x<0)
+
+        boxes[i].classList.add("red");
+
+       else if(x==0)
+
+        boxes[i].classList.add("yellow");
+
+        else
+
+        boxes[i].classList.add("green");
+        
+    }
+    }
+    </script>
+    <input type="text"><br><br>
+    <input type="text" ><br><br>
+    <input type="text" ><br><br>
+    <input type="text" ><br><br>
+    <input type="text" ><br><br>
+    <input type="text" ><br><br>
+    <input type="button" onclick="Show()"value="Show">
+</body>
+</html>

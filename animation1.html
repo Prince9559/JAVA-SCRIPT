@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .search-box {
+            width: 40%;
+            height: 40px;
+            border: 3px solid yellow;
+            border-radius: 50px;
+            font-size: 20px;
+            outline: none;
+            color: white;
+            margin-top: 150px;
+            background-color: black;
+            text-align: center;
+        }
+        .search-box:focus {
+            background-color: black;
+            border-color: blue;
+            box-shadow: 0px 0px 25px blue;
+        }
+        .col {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+        .col1:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px blue;
+        }
+
+        .cart {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: none; /* Initially hidden */
+        }
+        .cart:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px blue;
+        }
+
+        .product {
+            text-align: center;
+        }
+        .product-name {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<script>
+function Shoping() {
+    let search = document.querySelector(".search-box").value.toLowerCase().trim();
+    let products = document.querySelectorAll(".product");
+    let cartIcon = document.querySelector(".cart");
+    let found = false;
+
+    products.forEach(product => {
+        let productName = product.querySelector(".product-name").innerText.toLowerCase().trim();
+        
+        if (productName.includes(search) && search !== "") {  
+            product.style.display = "block";  
+            found = true;
+        } else {
+            product.style.display = "none";  
+        }
+    });
+
+    cartIcon.style.display = found ? "block" : "none";  
+}
+</script>
+
+<body style="background-color:green">
+    <center>
+        <input class="search-box" onkeyup="Shoping()" onchange="Shoping()" placeholder="Search product...">
+    </center>
+    <img class="cart" src="pic/cart.jpeg" alt="cart">
+
+    <div class="col">
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/book.jpg" alt="Book" width="220px" height="220px">
+            <p class="product-name">Book</p>
+            <button>Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/chair.jpg" alt="Chair" width="220px" height="220px">
+            <p class="product-name">Chair</p>
+            <button>Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/pen.jpg" alt="Pen" width="220px" height="220px">
+            <p class="product-name">Pen</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/mobile.jpg" alt="Mobile" width="220px" height="220px">
+            <p class="product-name">Mobile</p>
+            <button>Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/laptop.jpg" alt="Laptop" width="220px" height="220px">
+            <p class="product-name">Laptop</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>

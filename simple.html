@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col {
+            width: 200px;
+            height: 200px;
+        }
+
+        .col1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .col2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .col3 {
+            width: 300px;
+            height: 500px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-color: aqua;">
+    <img onmouseout="hidepic(event)" onmouseover="magnify(event)" class="col" src="pic/anar.jpg">
+    <img onmouseout="hidepic(event)" onmouseover="magnify(event)" class="col1" src="pic/banana.jpg">
+    <img onmouseout="hidepic(event)" onmouseover="magnify(event)" class="col2" src="pic/apple.jpg">
+    <img id="output" style="display: none;" class="col3" src="pic/ggggg.jpg">
+    <script>
+        const outputpic = document.getElementById("output");
+        function magnify(event) {
+
+            console.log(event.target.src);
+            outputpic.src = event.target.src;
+            outputpic.style.display="block";
+            
+        }
+        function hidepic(event) {
+
+            console.log(event.target.src);
+            outputpic.style.display="none";
+
+        }
+    </script>
+</body>
+
+</html>

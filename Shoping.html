@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .search-box {
+            width: 40%;
+            height: 40px;
+            border: 3px solid yellow;
+            border-radius: 50px;
+            font-size: 20px;
+            outline: none;
+            color: white;
+            margin-top: 150px;
+            background-color: black;
+            padding: 0px 0px 0px 50px;
+        }
+        .search-box:focus {
+            background-color: black;
+            border-color: blue;
+            box-shadow: 0px 0px 25px blue;
+        }
+        .col {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+        .col1:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px blue;
+        }
+
+        .cart {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            border-radius: 50px;
+        }
+        .cart:hover {
+            background-color: blue;
+            border-color: blue;
+            box-shadow: 0px 0px 25px blue;
+        }
+
+        .product {
+            text-align: center;
+            cursor: pointer;
+        }
+        .product-name {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 360px;
+            top: 31%;
+            font-size: 20px;
+            color: gray;
+        }
+
+        #cart-items {
+            position: fixed;
+            top: 140px;
+            right: 30px;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 250px;
+            display: none;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        #cart-items h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        #cart-list {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body style="background-color:green">
+
+    <span class="search-icon">🔍</span>
+
+    <center>
+        <input class="search-box" onkeyup="searchProducts()" onchange="searchProducts()" placeholder="Search product...">
+        <p id="search-result" style="color: white; font-size: 20px;"></p>
+    </center>
+
+    <input class="cart" type="image" src="pic/cart.jpeg">
+
+    <!-- Cart Items Display -->
+    <div id="cart-items">
+        <h3>🛒 Cart</h3>
+        <ul id="cart-list"></ul>
+    </div>
+
+    <div class="col">
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/book.jpg" alt="Book" width="220px" height="220px">
+            <p class="product-name">Book</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/chair.jpg" alt="Chair" width="220px" height="220px">
+            <p class="product-name">Chair</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/pen.jpg" alt="Pen" width="220px" height="220px">
+            <p class="product-name">Pen</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/mobile.jpg" alt="Mobile" width="220px" height="220px">
+            <p class="product-name">Mobile</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/laptop.jpg" alt="Laptop" width="220px" height="220px">
+            <p class="product-name">Laptop</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/coca.jpg" alt="CocaCola" width="220px" height="220px">
+            <p class="product-name">CocaCola</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/blue.jpg" alt="Bluetooth" width="220px" height="220px">
+            <p class="product-name">Bluetooth</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/cover.jpg" alt="Mobilecover" width="220px" height="220px">
+            <p class="product-name">Mobilecover</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/wa.jpg" alt="Watch" width="220px" height="220px">
+            <p class="product-name">Watch</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/sho.jpg" alt="Shoes" width="220px" height="220px">
+            <p class="product-name">Shoes</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/car.jpg" alt="Car" width="220px" height="220px">
+            <p class="product-name">Car</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/fanjpg.jpg" alt="Fan" width="220px" height="220px">
+            <p class="product-name">Fan</p>
+        </div>
+
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/rose.jpg" alt="rose" width="220px" height="220px">
+            <p class="product-name">Rose</p>
+        </div>
+        
+        <div class="product">
+            <input class="col1" style="border-radius: 50px;" type="image" src="pic/anar.jpg" alt="pomegranate" width="220px" height="220px">
+            <p class="product-name">Pomegranate</p>
+
+        </div>
+  
+    </div>
+
+    <script>
+        function searchProducts() {
+            let search = document.querySelector(".search-box").value.toLowerCase().trim();
+            let resultText = document.getElementById("search-result");
+            let products = document.querySelectorAll(".product");
+
+            if (search === "") 
+            {
+                resultText.innerText = "";
+            } 
+            else 
+            {
+                resultText.innerText = "You searched for: " + search;
+            }
+
+            products.forEach(product => {
+                let name = product.querySelector("p").innerText.toLowerCase().trim();
+                if (name.includes(search)) 
+                {
+                    product.style.display = "block";
+                } 
+                else 
+                {
+                    product.style.display = "none";
+                }
+            });
+        }
+
+        let cartItems = [];
+        function addToCart(productName) 
+        {
+            cartItems.push(productName);
+            document.getElementById("cart-items").style.display = "block";
+
+            let cartList = document.getElementById("cart-list");
+            cartList.innerHTML = "";
+            cartItems.forEach(item => 
+            {
+                let li = document.createElement("li");
+                li.textContent = item;
+                cartList.appendChild(li);
+            });
+        }
+
+        document.querySelectorAll(".product").forEach(product => 
+        {
+            product.addEventListener("click", () => 
+            {
+                let name = product.querySelector(".product-name").innerText;
+                addToCart(name);
+            });
+        });
+    </script>
+</body>
+</html>

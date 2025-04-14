@@ -15,6 +15,7 @@
             color: white;
             margin-top: 150px;
             background-color: black;
+           
         }
         .search-box:focus {
             background-color: black;
@@ -27,113 +28,143 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 50px;
-            margin-left: 6px;  
         }
         .col1:hover {
             transform: scale(1.1);
             box-shadow: 0px 0px 25px blue;
         }
 
-        .cart {
-            width: 70px;
-            height: 70px;
+        .cart{
+            width: 100px;
+            height: 100px;
             position: absolute;
-            top: 30px;
-            right: 30px;
+            margin-top: -180px;
+            margin-left: 1100px;
         }
-        .cart:hover {
-            transform: scale(1.1);
+        .cart:hover{
+            background-color: blue;
+            border-color: blue;
             box-shadow: 0px 0px 25px blue;
         }
 
         .product {
-            text-align: center;
-            display: block;
-        }
-        .product-name {
-            font-size: 20px;
-            color: white;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            background-color: yellow;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: orange;
-        }
-
+             text-align: center;
+         }
+         .product-name {
+             font-size: 20px;
+             color: white;
+             font-weight: bold;
+             margin-top: 5px;
+         }
+        
     </style>
 </head>
-<script>
-function Shoping() 
+<script> 
+
+function Shoping()
 {
-    let search = document.getElementsByTagName("input")[0].value.toLowerCase().trim();
-    let images = document.getElementsByTagName("input");
+let search=document.getElementsByTagName("input")[0].value.toLowerCase().trim();
+let image=document.getElementsByTagName("input");
 
-    let n = images.length;
+let count=0;
+let n=image.length;
 
-    for (let i = 1; i < n; i++) 
+console.log(n);
+for(i=1;i<=n-1;i++)
+{
+    console.log(search)
+
+    let movieName = image[i].alt.toLowerCase().trim();
+
+    if(movieName.includes(search))
     {
-        let productName = images[i].alt.toLowerCase().trim();
-
-        if (productName.includes(search)) 
-        {
-
-            images[i].style.display = "block"; 
-            images[i].nextElementSibling.style.display = "block";
-
-        } 
-        else 
-        {
-            images[i].style.display = "none";  
-            images[i].nextElementSibling.style.display = "none";  
-        }
+    image[i].style.display="block";
+    count++;
     }
+
+    else
+
+    {
+     image[i].style.display="none";
+
+    }
+
+}
+
 }
 </script>
 
 <body style="background-color:green">
-    <center><input class="search-box" onkeyup="Shoping()" onchange="Shoping()" placeholder="Search.."></center>
-    <img class="cart" src="pic/cart.jpeg" alt="cart">
+    <center>
+        <input class="search-box" onkeyup="Shoping()" onchange="Shoping()" placeholder="Search product...">
+    </center>
+    
 
-    <div class="col">
-        <div class="product">
-            <input class="col1" style="border-radius: 50px;" type="image" src="pic/book.jpg" alt="book" width="220px" height="220px">
-            <p class="product-name">Book</p>
-            <button>Add to Cart</button>
+    <input class="cart" type="image" img src="pic/cart.jpeg">
+
+      <div class="col">    
+    
+        <div class="product">       
+        <input class="col1" style="border-radius: 50px;" type="image" src="pic/book.jpg" alt="Book" width="220px" height="220px">
+        <p class="product-name">Book</p>    
+        </div>
+           
+        <div class="product">    
+        <input class="col1" style="border-radius: 50px;" type="image" src="pic/chair.jpg" alt="Chair" width="220px" height="220px">
+       <p class="product-name">Chair</p>     
+       </div>   
+
+        <div>
+        <input class="col1" style="border-radius: 50px;" type="image" src="pic/pen.jpg" alt="Pen" width="220px" height="220px">
+        <p class="product-name">Pen</p>        
+        </div>    
+
+        <div>
+        <input class="col1" style="border-radius: 50px;" type="image" src="pic/mobile.jpg" alt="Mobile" width="220px" height="220px">
+        <p class="product-name">Mobile</p>     
         </div>
         
-        <div class="product">
-            <input class="col1" style="border-radius: 50px;" type="image" src="pic/chair.jpg" alt="chair" width="220px" height="220px">
-            <p class="product-name">Chair</p>
-            <button>Add to Cart</button>
-        </div>
-        
-        <div class="product">
-            <input class="col1" style="border-radius: 50px;" type="image" src="pic/pen.jpg" alt="pen" width="220px" height="220px">
-            <p class="product-name">Pen</p>
-            <button>Add to Cart</button>
+        <div>
+        <input class="col1" style="border-radius: 50px;" type="image" src="pic/laptop.jpg" alt="Laptop" width="220px" height="220px">
+        <p class="product-name">Laptop</p>
+       </div>
+
+       <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/coca.jpg" alt="CocaCola"width="220px"height="220px">
+        <p class="product-name">CocaCola</p>
         </div>
 
-        <div class="product">
-            <input class="col1" style="border-radius: 50px;" type="image" src="pic/mobile.jpg" alt="mobile" width="220px" height="220px">
-            <p class="product-name">Mobile</p>
-            <button>Add to Cart</button>
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/blue.jpg" alt="bluetooth"width="220px"height="220px">
+        <p class="product-name">bluetooth</p>
+        </div>
+
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/cover.jpg" alt="Mobilecover"width="220px"height="220px">
+        <p class="product-name">Mobilecover</p>    
         </div>
         
-        <div class="product">
-            <input class="col1" style="border-radius: 50px;" type="image" src="pic/laptop.jpg" alt="laptop" width="220px" height="220px">
-            <p class="product-name">Laptop</p>
-            <button>Add to Cart</button>
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/wa.jpg" alt="watch"width="220px"height="220px">
+        <p class="product-name">Watch</p>    
         </div>
         
-    </div>
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/sho.jpg" alt="shose"width="220px"height="220px">
+        <p class="product-name">Shose</p>  
+        </div>
+        
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/car.jpg" alt="Car"width="220px"height="220px">
+        <p class="product-name">Car</p>
+        </div> 
+        
+        <div>
+        <input class="col1" style="border-radius: 50px;"type="image" src="pic/fanjpg.jpg" alt="fan"width="220px"height="220px">
+        <p class="product-name">Fan</p>
+        </div>
+
+        </div>
+
 </body>
 </html>

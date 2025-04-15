@@ -1,5 +1,5 @@
 [{
-  "menuBar": [
+  "menuBar":[
     { "id": 1, "title": "Fashion"},
     { "id": 2, "title": "Electronic"},
     { "id": 3, "title": "Home & Furniture"},

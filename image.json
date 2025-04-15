@@ -1,7 +1,11 @@
-{
-    "name": "Azad",
-    "height": "172",
-    "gender": "male",
-    "face": "faciyle",
-    "image": "pic/1.jpg"
+[{
+  "menuBar": [
+    { "id": 1, "title": "Fashion"},
+    { "id": 2, "title": "Electronic"},
+    { "id": 3, "title": "Home & Furniture"},
+    { "id": 4, "title": "Toy"},
+    { "id": 5, "title": "Sports"},
+    { "id": 6, "title": "Kids"}
+  ]
 }
+]

@@ -1,20 +1,264 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input type="text">
-    <br>
-    <button onclick="show()">Submit</button>
+    <title>Search</title>
+    <style>
 
-    <script>
-        function show(){
+.search-box {
+            width: 40%;
+            height: 40px;
+            border: 3px solid #ccc;
+            border-radius: 50px;
+            font-size: 20px;
+            outline: none;
+            padding: 0px 0px 0px 15px; 
+            color: white;
+        }
+        .search-box:hover{
+            background-color: aqua;
+            border-color: yellow;
+            box-shadow: 0px 0px 25px yellow;
+        }
+        .search-box:focus{
+            background-color: black;
+            border-color: blue;
+            box-shadow: 0px 0px 25px blue;
+        }
+
+        
+@keyframes move {
+            0% {
+                left: 0%;
+                top: 0%;
+            }
+
+            25% {
+
+                left: 94%;
+                top: 0%;
+            }
+
+            50% {
+                left: 94%;
+                top: 234%;
+            }
+
+            75% {
+                left: 0%;
+                top: 234%;
+            }
+            100%{
+            left: 0%;
+            top:0%;
+            }
+        }
+
+        .ball{
+   
+            position: absolute;            
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            animation-name: move;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
 
         }
-    </script>
+     .ball:hover{
+        background-color: green;
+        border-color: yellow;
+        box-shadow: 0px 0px 25px yellow;
+     }
+
+
+@keyframes fadeAnimation {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .fading-text {
+ 
+      border-radius: 30px;   
+      width: 300px;
+      height: 110px;  
+      font-size: 23px;
+      color: #2ecc71;
+      animation: fadeAnimation 2s infinite;
+      
+    }
+
+
+
+@keyframes rotateAnimation {
+      0% { transform: rotateX(0) rotateY(0) rotate(0); }
+      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+
+    .rotating-cube {
+      width: 150px;
+      height: 130px;
+      background-color: #e74c3c;
+      transform-style: preserve-3d;
+      animation: rotateAnimation 4s infinite;
+    }
+
+    .col{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+        margin-left: 6px;
+
+    }
+
+
     
+    .col1:hover{
+        transform: scale(1.1);
+        border-color: blue;
+        box-shadow: 0px 0px 25px blue;
+    }
+
+   .col2{
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 0%;
+    border-color: red;
+   }
+   
+
+    </style>
+</head>
+<body style="background-color:crimson">
+<script>
+
+function show()
+{
+let search=document.getElementsByTagName("input")[0].value.toLowerCase().trim();
+let image=document.getElementsByTagName("input");
+let count=0;
+let n=image.length;
+
+console.log(n);
+for(i=1;i<=n-1;i++)
+{
+    console.log(search)
+
+    let movieName = image[i].alt.toLowerCase().trim();
+
+    if(movieName.includes(search))
+    {
+    image[i].style.display="block";
+    count++;
+    }
+    else
+    {
+     image[i].style.display="none";
+
+    }
+}
+
+//  document.getElementById("count").innerText=count;
+
+document.getElementById("count").innerText = count ? `${count} Movie Availble`:"Movie is not available";
+
+}   
+
+
+
+
+</script>
+
+<!-- <div> -->
+<img  class="ball" src="pic/prince.jpg">
+<center><h2 style="background-color:black;border-radius: 50%;color: aliceblue;">🥀<i>Old Top Movies </i>🖥️</h2></center>
+
+<center><img src="pic/we.jpg"style="border-radius: 30px;background-color:green"class="rotating-cube "></center><br>
+
+
+<div class="search-container"id="searchInput">
+
+
+<!-- <span class="search-icon">🔍</span> -->
+
+<center><input type="search" class="search-box" onkeyup="show()"onchange="show()"placeholder="Search.."></center>
+
+
+
+ <br>
+ <center><img class="fading-text" src="pic/welcome1.jpg"></center>
+<br>
+
+<!-- <label style="margin-top: -50px;" class="col2" id="count"></label> -->
+
+<label class="fading-text" id="count"style="display: block;font-size: 30px; color:black;margin-top:-120px;margin-left: 850px;"></label>
+
+
+
+<div class="col">
+    <a href="https://www.youtube.com/watch?v=aNBryhJaH-4&t=51s"target="_blank">
+    <input class="col1"style="border-radius: 15px;" type="image" img src="pic/jawan.jpg"alt="jawan" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=jNDkdiKf5-c"target="_blank"> 
+    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ji.jpg"alt="jigar" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=OMlG0mX3wZ8&t=68s">
+    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/makkhi.jpg"alt="makkhi" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=-BtFBMqKuTM&t=4s">
+   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/pk.jpg"alt="pk" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=vB2m1uRF30c&t=1s">
+   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/sur.jpg"alt="Suryavansham" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=LKNHVDPKy7g">
+   <input class="col1"style="border-radius: 15px;" type="image" img src="pic/dha.jpg"alt="dhamal" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=AgwszFUm_yQ&t=4s">
+    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/yevadu.jpg"alt="yevadu" width="200px"height="200px"></a>
+   
+    <a href="https://www.youtube.com/watch?v=sNpy-C-VxYY&t=31s">
+    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/tigg.jpg"alt="tiger" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=9AY-PhOuks8">
+   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ram.jpg"alt="ramayan" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=LI0rkywocxs">
+   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/loinmovie.jpg"alt="animals" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=crW8JrbIjCs&t=1s"> 
+    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/diljale.jpg"alt="diljale"width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=gKizDojsdvs&t=2731s">
+    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/kgf.jpg"alt="kgf"width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=DbPrQ_w6Zos&t=2s">
+    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/bahubali.jpg"alt="bahubali" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=8vyd940IdHY&t=1s">
+    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/krish.jpg"alt="krrish" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=f7FC2gLPTd8&t=1s">
+    <input class="col1"img style="border-radius: 15px;" type="image" src="pic/mirza.jpg"alt="mirzapur" width="200px"height="200px"></a>
+
+    <a href="https://www.youtube.com/watch?v=6qP0wgPCMNM&t=4s">
+    <input class="col1"style="border-radius: 15px;" type="image" img src="pic/robot.jpg"alt="robot"width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=d8WFC7cs5SU&t=27s">
+   <input class="col1"style="border-radius: 15px;" type="image" img src="pic/sholay.jpg"alt="sholay" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=0OF88aFJzUY&t=3s">
+   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/spider.jpg"alt="spider" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=1arf9JFqLec">
+   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ga.jpg"alt="gadder" width="200px"height="200px"></a>
+
+   <a href="https://www.youtube.com/watch?v=oGlpH19rwUQ&t=6s">
+   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/gadd.jpg"alt="gadder" width="200px"height="200px"></a>
+   
+</div>
 </body>
 </html>

@@ -13,7 +13,7 @@
             border-radius: 50px;
             font-size: 20px;
             outline: none;
-            padding: 0px 0px 0px 50px; 
+            padding: 0px 0px 0px 15px; 
             color: white;
         }
         .search-box:hover{
@@ -27,14 +27,7 @@
             box-shadow: 0px 0px 25px blue;
         }
 
-        .search-icon {
-            position: absolute;
-            left: 360px;
-            top: 43.5%;
-            font-size: 20px;
-            color: gray;
         
-        }
 @keyframes move {
             0% {
                 left: 0%;
@@ -99,7 +92,7 @@
 
 
 @keyframes rotateAnimation {
-      0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+      0% { transform: rotateX(0) rotateY(0) rotate(0); }
       100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
     }
 
@@ -135,6 +128,7 @@
     margin-top: 0%;
     border-color: red;
    }
+   
 
     </style>
 </head>
@@ -160,37 +154,25 @@ for(i=1;i<=n-1;i++)
     image[i].style.display="block";
     count++;
     }
-
     else
-
     {
      image[i].style.display="none";
 
     }
-
-
 }
 
 //  document.getElementById("count").innerText=count;
 
 document.getElementById("count").innerText = count ? `${count} Movie Availble`:"Movie is not available";
 
-//  if(count==0)
-//  {
-//      document.getElementById("count").innerText="Movie is Not Availble";
-//  }
 }   
 
-// function setSearchText(movieName) 
-// {
-//     document.getElementsByTagName("input").value = movieName;
-//     show();
-// }
 
 
-    </script>
 
+</script>
 
+<!-- <div> -->
 <img  class="ball" src="pic/prince.jpg">
 <center><h2 style="background-color:black;border-radius: 50%;color: aliceblue;">🥀<i>Old Top Movies </i>🖥️</h2></center>
 
@@ -199,11 +181,12 @@ document.getElementById("count").innerText = count ? `${count} Movie Availble`:"
 
 <div class="search-container"id="searchInput">
 
-<span class="search-icon">🔍</span>
-<center><input class="search-box" onkeyup="show()"onchange="show()"placeholder="Search Movie Names.."></center>
+
+<!-- <span class="search-icon">🔍</span> -->
+
+<center><input type="search" class="search-box" onkeyup="show()"onchange="show()"placeholder="Search.."></center>
 
 
-</div>
 
  <br>
  <center><img class="fading-text" src="pic/welcome1.jpg"></center>

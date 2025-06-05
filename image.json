@@ -1,6 +1,6 @@
 [{
-  "menuBar":[
-    { "id": 1, "title": "Fashion"},
+  "items":[
+    { "id": 1, "title": "Fashion","image":""},
     { "id": 2, "title": "Electronic"},
     { "id": 3, "title": "Home & Furniture"},
     { "id": 4, "title": "Toy"},

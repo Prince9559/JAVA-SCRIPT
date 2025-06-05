@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Click to Open</title>
+  <style>
+    .gallery img {
+      width: 100px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="gallery">
+  <img src="pic/0.jpg" onclick="openModal(this.src)">
+  <img src="pic/anar.jpg" onclick="openModal(this.src)">
+  <img src="pic/banana.jpg" onclick="openModal(this.src)">
+  <img src="pic/book.jpg" onclick="openModal(this.src)">
+  <img src="pic/apple.jpg" onclick="openModal(this.src)">
+</div>
+
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+  <img id="modalImage" src="">
+</div>
+
+<script>
+  function openModal(src) {
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

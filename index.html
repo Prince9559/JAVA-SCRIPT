@@ -26,46 +26,30 @@
             border-color: blue;
             box-shadow: 0px 0px 25px blue;
         }
-
-        
+     
 @keyframes move {
-            0% {
-                left: 0%;
-                top: 0%;
-            }
 
-            25% {
+0% { transform: rotateY(0); }
+100% { transform: rotateY(360deg); }
 
-                left: 94%;
-                top: 0%;
-            }
+0% {left: 0%;top: 0%;}
+25% {left: 94%;top: 0%;}
+50% {left: 94%;top: 85%;}
+75% {left: 0%;top: 85%;}
+100%{left: 0%;top:0%;}
+}
 
-            50% {
-                left: 94%;
-                top: 234%;
-            }
+.ball {
+      position: absolute;            
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      animation-name: move;
+      animation-duration: 20s;
+      animation: move 20s linear infinite;
+      animation-iteration-count: infinite;
+    }
 
-            75% {
-                left: 0%;
-                top: 234%;
-            }
-            100%{
-            left: 0%;
-            top:0%;
-            }
-        }
-
-        .ball{
-   
-            position: absolute;            
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            animation-name: move;
-            animation-duration: 20s;
-            animation-iteration-count: infinite;
-
-        }
      .ball:hover{
         background-color: green;
         border-color: yellow;

@@ -13,90 +13,101 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #0d0d0d;
+      background: radial-gradient(circle at top left, #0d0d0d, #1c1c1c);
       color: #0ff;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
     header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to right, #141e30, #243b55);
       text-align: center;
-      padding: 100px 20px 50px;
+      padding: 100px 20px 60px;
       color: white;
-      position: relative;
     }
     header h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 10px;
       animation: fadeInDown 1s ease;
     }
     header p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 300;
       animation: fadeInUp 1.2s ease;
     }
     .resume-btn {
       display: inline-block;
       background: #0ff;
       color: #000;
-      padding: 12px 28px;
+      padding: 14px 32px;
       text-decoration: none;
-      border-radius: 30px;
+      border-radius: 35px;
       font-weight: bold;
-      margin-top: 30px;
-      transition: 0.3s ease;
+      margin-top: 35px;
+      transition: 0.4s ease;
       animation: fadeIn 2s ease;
+      box-shadow: 0 0 20px #0ff6;
     }
     .resume-btn:hover {
       background: #00cccc;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #0ff9;
     }
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
     }
     h2 {
       color: #fff;
-      font-size: 2.2rem;
-      margin-bottom: 25px;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
       position: relative;
     }
     h2::after {
       content: '';
       position: absolute;
-      width: 70px;
+      width: 80px;
       height: 4px;
       background: #0ff;
-      bottom: -12px;
+      bottom: -14px;
       left: 0;
       border-radius: 2px;
     }
     .skills span {
       background: #0ff;
       color: #000;
-      padding: 10px 18px;
-      margin: 8px;
+      padding: 12px 22px;
+      margin: 10px;
       display: inline-block;
-      border-radius: 25px;
-      font-weight: bold;
-      box-shadow: 0 0 15px #0ff8;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 0 20px #0ff4;
       transition: transform 0.3s;
     }
     .skills span:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
     .project, .achievement {
-      background: #1a1a1a;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-left: 5px solid #0ff;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #0ff3;
+      background: #1e1e1e;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-left: 6px solid #0ff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #0ff3;
+      transition: transform 0.3s ease;
+    }
+    .project:hover, .achievement:hover {
+      transform: scale(1.02);
     }
     .project h3 {
       color: #0ff;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+    .project p, .achievement p {
+      font-size: 1.05rem;
+      color: #ccc;
     }
     .contact a {
       color: #0ff;
@@ -106,7 +117,7 @@
       text-decoration: underline;
     }
     .contact p {
-      margin: 12px 0;
+      margin: 14px 0;
       font-size: 1.1rem;
     }
     @keyframes fadeInDown {
@@ -132,7 +143,7 @@
 
   <section>
     <h2>About Me</h2>
-    <p>I am a BCA student at <strong>Microtek College of Management & Technology, Varanasi, Jaunpur</strong>. I enjoy creating full stack web applications, exploring new tech, and solving DSA problems. I also actively participate in coding competitions and love building clean, user-friendly UIs.</p>
+    <p>I am a BCA student at <strong>Microtek College of Management & Technology, Varanasi, Jaunpur</strong>. Passionate about full stack development, problem-solving, and creating smooth user experiences. I love learning new technologies and building smart digital solutions.</p>
   </section>
 
   <section>
@@ -155,22 +166,22 @@
     <h2>Projects</h2>
     <div class="project">
       <h3>📱 Attendance App</h3>
-      <p>Built using Flutter and Firebase, this app helps track student attendance with real-time database and authentication support.</p>
+      <p>Developed using Flutter and Firebase, this app simplifies classroom attendance with real-time updates and secure login.</p>
     </div>
     <div class="project">
       <h3>🌐 Portfolio Website</h3>
-      <p>A personal portfolio to showcase my journey, skills, and achievements, built using HTML, CSS, and JS.</p>
+      <p>My personal branding website built using HTML, CSS, and JS, representing my tech journey and creativity.</p>
     </div>
     <div class="project">
       <h3>🎮 Tic-Tac-Toe Game</h3>
-      <p>A logic-based C++ console game implementing core algorithmic structure for gameplay.</p>
+      <p>A fun and logic-based console game developed in C++ that reflects my problem-solving mindset.</p>
     </div>
   </section>
 
   <section>
     <h2>Achievements</h2>
     <div class="achievement">
-      <p>🏆 Winner Code Club competitions at Microtek College for creativity and technical skills.</p>
+      <p>🏆 Winner of Code Club events at Microtek College for excellence in innovation and cultural leadership.</p>
     </div>
   </section>
 

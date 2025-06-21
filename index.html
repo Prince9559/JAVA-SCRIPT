@@ -1,248 +1,185 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    <style>
-
-.search-box {
-            width: 40%;
-            height: 40px;
-            border: 3px solid #ccc;
-            border-radius: 50px;
-            font-size: 20px;
-            outline: none;
-            padding: 0px 0px 0px 15px; 
-            color: white;
-        }
-        .search-box:hover{
-            background-color: aqua;
-            border-color: yellow;
-            box-shadow: 0px 0px 25px yellow;
-        }
-        .search-box:focus{
-            background-color: black;
-            border-color: blue;
-            box-shadow: 0px 0px 25px blue;
-        }
-     
-@keyframes move {
-
-0% { transform: rotateY(0); }
-100% { transform: rotateY(360deg); }
-
-0% {left: 0%;top: 0%;}
-25% {left: 94%;top: 0%;}
-50% {left: 94%;top: 85%;}
-75% {left: 0%;top: 85%;}
-100%{left: 0%;top:0%;}
-}
-
-.ball {
-      position: absolute;            
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      animation-name: move;
-      animation-duration: 20s;
-      animation: move 20s linear infinite;
-      animation-iteration-count: infinite;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Kumar | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-
-     .ball:hover{
-        background-color: green;
-        border-color: yellow;
-        box-shadow: 0px 0px 25px yellow;
-     }
-
-
-@keyframes fadeAnimation {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #0ff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
-
-    .fading-text {
- 
-      border-radius: 30px;   
-      width: 300px;
-      height: 110px;  
-      font-size: 23px;
-      color: #2ecc71;
-      animation: fadeAnimation 2s infinite;
-      
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      text-align: center;
+      padding: 100px 20px 50px;
+      color: white;
+      position: relative;
     }
-
-
-
-@keyframes rotateAnimation {
-      0% { transform: rotateX(0) rotateY(0) rotate(0); }
-      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease;
     }
-
-    .rotating-cube {
-      width: 150px;
-      height: 130px;
-      background-color: #e74c3c;
-      transform-style: preserve-3d;
-      animation: rotateAnimation 4s infinite;
+    header p {
+      font-size: 1.5rem;
+      animation: fadeInUp 1.2s ease;
     }
-
-    .col{
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 50px;
-        margin-left: 6px;
-
+    .resume-btn {
+      display: inline-block;
+      background: #0ff;
+      color: #000;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 30px;
+      transition: 0.3s ease;
+      animation: fadeIn 2s ease;
     }
-
-
-    
-    .col1:hover{
-        transform: scale(1.1);
-        border-color: blue;
-        box-shadow: 0px 0px 25px blue;
+    .resume-btn:hover {
+      background: #00cccc;
+      transform: scale(1.05);
     }
-
-   .col2{
-    position: absolute;
-    margin-left: 75%;
-    margin-top: 0%;
-    border-color: red;
-   }
-   
-
-    </style>
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 4px;
+      background: #0ff;
+      bottom: -12px;
+      left: 0;
+      border-radius: 2px;
+    }
+    .skills span {
+      background: #0ff;
+      color: #000;
+      padding: 10px 18px;
+      margin: 8px;
+      display: inline-block;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: 0 0 15px #0ff8;
+      transition: transform 0.3s;
+    }
+    .skills span:hover {
+      transform: scale(1.1);
+    }
+    .project, .achievement {
+      background: #1a1a1a;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-left: 5px solid #0ff;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #0ff3;
+    }
+    .project h3 {
+      color: #0ff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .contact a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    .contact p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
-<body style="background-color:crimson">
-<script>
+<body>
+  <header>
+    <h1>Prince Kumar</h1>
+    <p>Full Stack Developer</p>
+    <a class="resume-btn" href="#">Download Resume</a>
+  </header>
 
-function show()
-{
-let search=document.getElementsByTagName("input")[0].value.toLowerCase().trim();
-let image=document.getElementsByTagName("input");
-let count=0;
-let n=image.length;
+  <section>
+    <h2>About Me</h2>
+    <p>I am a BCA student at <strong>Microtek College of Management & Technology, Varanasi, Jaunpur</strong>. I enjoy creating full stack web applications, exploring new tech, and solving DSA problems. I also actively participate in coding competitions and love building clean, user-friendly UIs.</p>
+  </section>
 
-console.log(n);
-for(i=1;i<=n-1;i++)
-{
-    console.log(search)
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>C</span>
+      <span>C++</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React.js</span>
+      <span>Node.js</span>
+      <span>MySQL</span>
+      <span>DSA</span>
+      <span>GitHub</span>
+    </div>
+  </section>
 
-    let movieName = image[i].alt.toLowerCase().trim();
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>📱 Attendance App</h3>
+      <p>Built using Flutter and Firebase, this app helps track student attendance with real-time database and authentication support.</p>
+    </div>
+    <div class="project">
+      <h3>🌐 Portfolio Website</h3>
+      <p>A personal portfolio to showcase my journey, skills, and achievements, built using HTML, CSS, and JS.</p>
+    </div>
+    <div class="project">
+      <h3>🎮 Tic-Tac-Toe Game</h3>
+      <p>A logic-based C++ console game implementing core algorithmic structure for gameplay.</p>
+    </div>
+  </section>
 
-    if(movieName.includes(search))
-    {
-    image[i].style.display="block";
-    count++;
-    }
-    else
-    {
-     image[i].style.display="none";
+  <section>
+    <h2>Achievements</h2>
+    <div class="achievement">
+      <p>🏆 Winner Code Club competitions at Microtek College for creativity and technical skills.</p>
+    </div>
+  </section>
 
-    }
-}
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: kumarprince95596186@gmail.com</p>
+    <p>📞 Phone: 9559618602</p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/prince-kumar-724160333" target="_blank">Prince Kumar</a></p>
+  </section>
 
-//  document.getElementById("count").innerText=count;
-
-document.getElementById("count").innerText = count ? `${count} Movie Availble`:"Movie is not available";
-
-}   
-
-
-
-
-</script>
-
-<!-- <div> -->
-<img  class="ball" src="pic/prince.jpg">
-<center><h2 style="background-color:black;border-radius: 50%;color: aliceblue;">🥀<i>Old Top Movies </i>🖥️</h2></center>
-
-<center><img src="pic/we.jpg"style="border-radius: 30px;background-color:green"class="rotating-cube "></center><br>
-
-
-<div class="search-container"id="searchInput">
-
-
-<!-- <span class="search-icon">🔍</span> -->
-
-<center><input type="search" class="search-box" onkeyup="show()"onchange="show()"placeholder="Search.."></center>
-
-
-
- <br>
- <center><img class="fading-text" src="pic/welcome1.jpg"></center>
-<br>
-
-<!-- <label style="margin-top: -50px;" class="col2" id="count"></label> -->
-
-<label class="fading-text" id="count"style="display: block;font-size: 30px; color:black;margin-top:-120px;margin-left: 850px;"></label>
-
-
-
-<div class="col">
-    <a href="https://www.youtube.com/watch?v=aNBryhJaH-4&t=51s"target="_blank">
-    <input class="col1"style="border-radius: 15px;" type="image" img src="pic/jawan.jpg"alt="jawan" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=jNDkdiKf5-c"target="_blank"> 
-    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ji.jpg"alt="jigar" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=OMlG0mX3wZ8&t=68s">
-    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/makkhi.jpg"alt="makkhi" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=-BtFBMqKuTM&t=4s">
-   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/pk.jpg"alt="pk" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=vB2m1uRF30c&t=1s">
-   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/sur.jpg"alt="Suryavansham" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=LKNHVDPKy7g">
-   <input class="col1"style="border-radius: 15px;" type="image" img src="pic/dha.jpg"alt="dhamal" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=AgwszFUm_yQ&t=4s">
-    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/yevadu.jpg"alt="yevadu" width="200px"height="200px"></a>
-   
-    <a href="https://www.youtube.com/watch?v=sNpy-C-VxYY&t=31s">
-    <input class="col1"style="border-radius: 15px;"type="image"img src="pic/tigg.jpg"alt="tiger" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=9AY-PhOuks8">
-   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ram.jpg"alt="ramayan" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=LI0rkywocxs">
-   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/loinmovie.jpg"alt="animals" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=crW8JrbIjCs&t=1s"> 
-    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/diljale.jpg"alt="diljale"width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=gKizDojsdvs&t=2731s">
-    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/kgf.jpg"alt="kgf"width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=DbPrQ_w6Zos&t=2s">
-    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/bahubali.jpg"alt="bahubali" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=8vyd940IdHY&t=1s">
-    <input class="col1"style="border-radius: 15px;"type="image" img src="pic/krish.jpg"alt="krrish" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=f7FC2gLPTd8&t=1s">
-    <input class="col1"img style="border-radius: 15px;" type="image" src="pic/mirza.jpg"alt="mirzapur" width="200px"height="200px"></a>
-
-    <a href="https://www.youtube.com/watch?v=6qP0wgPCMNM&t=4s">
-    <input class="col1"style="border-radius: 15px;" type="image" img src="pic/robot.jpg"alt="robot"width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=d8WFC7cs5SU&t=27s">
-   <input class="col1"style="border-radius: 15px;" type="image" img src="pic/sholay.jpg"alt="sholay" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=0OF88aFJzUY&t=3s">
-   <input class="col1"style="border-radius: 15px;"type="image" img src="pic/spider.jpg"alt="spider" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=1arf9JFqLec">
-   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/ga.jpg"alt="gadder" width="200px"height="200px"></a>
-
-   <a href="https://www.youtube.com/watch?v=oGlpH19rwUQ&t=6s">
-   <input class="col1"style="border-radius: 15px;"type="image"img src="pic/gadd.jpg"alt="gadder" width="200px"height="200px"></a>
-   
-</div>
 </body>
 </html>
